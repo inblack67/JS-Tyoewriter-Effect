@@ -11,7 +11,7 @@ const TypeWriter = function(textElement, words, wait = 3000){
 }
 
 TypeWriter.prototype.type = function() {
-    const currentIndex = this.wordIndex;
+    const currentIndex = this.wordIndex % this.words.length;
     const fullText = this.words[currentIndex];
     if(this.isDeleting){
         this.text = fullText.substring(0, this.text.length - 1);
